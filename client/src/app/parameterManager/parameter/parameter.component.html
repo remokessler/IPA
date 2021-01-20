@@ -1,0 +1,15 @@
+<div *ngIf="parameter" [class]="getErrorClass()" [title]="parameter.description ? parameter.description : ''">
+	<div class="col-md-3">
+		<cmi-viaduc-highlight [text]="parameter.name" [highlight]="searchString"></cmi-viaduc-highlight>
+	</div>
+	<var class="col-md-3">
+		{{parameter.default}}
+	</var>
+	<div class="col-md-4">
+		<input [class]="getInputClass()" [type]="parameter.type" (focus)="onFocus()" (change)="onValueChanged($event)" [checked]="checked" [value]="value">
+	</div>
+	<div *ngIf="active" class="col-md-2">
+		<input type="button" class="btn" value="Speichern" (click)="saveParameter()">
+		<input type="button" class="btn" value="Abbrechen" (click)="cancelEdit()">
+	</div>
+</div>

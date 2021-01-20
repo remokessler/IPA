@@ -1,0 +1,38 @@
+<div class="clearfix">
+	<section class="nav-services clearfix">
+		<div *ngIf="versionInfo" class="versioninfo">{{versionInfo}}</div>
+
+		<h2 class="sr-only">Sprachwahl</h2>
+		<nav class="nav-lang">
+			<ul>
+				<li *ngFor="let lang of languages">
+					<a (click)="setLanguage(lang)" href="javascript:void(0)" [lang]="lang.key" [title]="lang.label"
+					   [attr.aria-label]="lang.label" [ngClass]="{ 'active': lang.active }">{{lang.short}}</a>
+				</li>
+			</ul>
+		</nav>
+		<nav class="nav-service">
+			<ul class="download-link">
+				<li>&nbsp;
+					<a href="javascript:void(0)"><span>Anmelden</span></a>
+				</li>
+			</ul>
+		</nav>
+	</section>
+</div>
+
+<div class="clearfix">
+	<a href="#/{{language}}" class="brand hidden-xs">
+		<img src="./assets/img/logo-CH.svg" onerror="this.onerror = null; this.src = './assets/img/logo-CH.png'"
+			 alt="Logo der Schweizerischen Eidgenossenschaft – zur Startseite"/>
+		<h1>Management-Client des Bundesarchivs</h1>
+	</a>
+</div>
+
+<div class="logininfo">
+<span>
+    <span>Sie sind nicht angemeldet</span>
+    	<a class="glyphicon glyphicon-info-sign infoicon" data-toggle="tooltip" data-placement="bottom"
+	   		title="Melden Sie sich an, um die Management-Funktionen verwenden zu können."></a>
+	</span>
+</div>
